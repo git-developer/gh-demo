@@ -12,9 +12,9 @@ jobs:
       packages: write
     uses: ./.github/workflows/deploy.yml
     with:
-      ${{ inputs.ghcr }}
+      ghcr: ${{ inputs.ghcr }}
   job-2:
     if: ${{ !inputs.ghcr }}
     uses: ./.github/workflows/deploy.yml
     with:
-      ${{ inputs.ghcr }}
+      ghcr: ${{ inputs.ghcr }}
