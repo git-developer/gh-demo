@@ -5,14 +5,14 @@ on:
         type: string
 
 jobs:
-  write:
+  ghcr:
     if: inputs.registry == 'ghcr'
     permissions:
       packages: write
     runs-on: ubuntu-latest
     steps:
       - run: echo Deploy to GHCR
-  print:
+  dockerhub:
     if: inputs.registry != 'ghcr'
     runs-on: ubuntu-latest
     steps:
