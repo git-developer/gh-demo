@@ -1,3 +1,4 @@
+Name: Trigger
 on:
   workflow_dispatch:
     inputs:
@@ -9,7 +10,11 @@ jobs:
     if: ${{ inputs.ghcr }}
     permissions:
       packages: write
-    uses: ./.github/workflows/deploy-to-ghcr.yml
+    uses: ./.github/workflows/deploy.yml
+    with:
+      ${{ inputs.ghcr }}
   job-2:
     if: ${{ !inputs.ghcr }}
-    uses: ./.github/workflows/deploy-to-dockerhub.yml
+    uses: ./.github/workflows/deploy.yml
+    with:
+      ${{ inputs.ghcr }}

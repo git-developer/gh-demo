@@ -1,0 +1,18 @@
+on:
+  workflow_call:
+    inputs:
+      ghcr: boolean
+
+jobs:
+  write:
+    if: ${{ inputs.ghcr }}
+    permissions:
+      packages: write
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo Deploy to GHCR
+  print:
+    if: ${{ !inputs.ghcr }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo Deploy to Docker Hub
