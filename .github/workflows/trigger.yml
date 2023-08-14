@@ -6,4 +6,4 @@ jobs:
   job:
     uses: ./.github/workflows/deploy.yml
     with:
-      ghcr: false
+      registry: ghcr

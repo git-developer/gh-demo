@@ -1,19 +1,19 @@
 on:
   workflow_call:
     inputs:
-      ghcr:
-        type: boolean
+      registry:
+        type: string
 
 jobs:
   write:
-    if: inputs.ghcr
+    if: inputs.registry == 'ghcr'
     permissions:
       packages: write
     runs-on: ubuntu-latest
     steps:
       - run: echo Deploy to GHCR
   print:
-    if: !inputs.ghcr
+    if: inputs.registry != 'ghcr'
     runs-on: ubuntu-latest
     steps:
       - run: echo Deploy to Docker Hub
