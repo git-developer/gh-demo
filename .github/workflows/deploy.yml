@@ -6,14 +6,14 @@ on:
 
 jobs:
   write:
-    if: ${{ inputs.ghcr }}
+    if: inputs.ghcr
     permissions:
       packages: write
     runs-on: ubuntu-latest
     steps:
       - run: echo Deploy to GHCR
   print:
-    if: ${{ !inputs.ghcr }}
+    if: !inputs.ghcr
     runs-on: ubuntu-latest
     steps:
       - run: echo Deploy to Docker Hub

@@ -1,8 +1,0 @@
-on:
-  workflow_call:
-
-jobs:
-  print:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo Deploy to Docker Hub
