@@ -1,0 +1,15 @@
+on:
+  workflow_dispatch:
+    inputs:
+      ghcr:
+        type: boolean
+
+jobs:
+  job-1:
+    if: ${{ inputs.ghcr }}
+    permissions:
+      packages: write
+    uses: ./.github/workflows/deploy-to-ghcr.yml
+  job-2:
+    if: ${{ !inputs.ghcr }}
+    uses: ./.github/workflows/deploy-to-dockerhub.yml
