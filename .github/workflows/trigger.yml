@@ -1,20 +1,9 @@
 name: Trigger
 on:
   workflow_dispatch:
-    inputs:
-      ghcr:
-        type: boolean
 
 jobs:
-  job-1:
-    if: ${{ inputs.ghcr }}
-    permissions:
-      packages: write
+  job:
     uses: ./.github/workflows/deploy.yml
     with:
-      ghcr: ${{ inputs.ghcr }}
-  job-2:
-    if: ${{ !inputs.ghcr }}
-    uses: ./.github/workflows/deploy.yml
-    with:
-      ghcr: ${{ inputs.ghcr }}
+      ghcr: false
