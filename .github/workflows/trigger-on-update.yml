@@ -7,7 +7,7 @@ on:
 
 env:
   UPDATE_CHECK_URLS: http://n-tv.de/
-  DOWNSTREAM_PROJECT: https://github.com/git-developer/mqmgateway.git
+  DOWNSTREAM_PROJECT: git-developer/mqmgateway
   DOWNSTREAM_REF: feature/docker
   DOWNSTREAM_WORKFLOW_ID: mqmgateway-ci.yml
   IMAGE_NAME: ckware/mqmgateway
