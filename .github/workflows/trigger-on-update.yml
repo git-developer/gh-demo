@@ -1,0 +1,19 @@
+name: Trigger Build on Update
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 5 * * *'
+
+env:
+  UPDATE_CHECK_URLS: http://n-tv.de/
+  DOWNSTREAM_PROJECT: https://github.com/git-developer/mqmgateway.git
+  DOWNSTREAM_REF: feature/docker
+
+jobs:
+  trigger-on-update-job:
+    runs-on: ubuntu-latest
+    name: Trigger on Update
+    steps:
+      - name: trigger-on-update-step
+        uses: git-developer/github-actions/.github/actions/trigger-on-update@feature/update-check
