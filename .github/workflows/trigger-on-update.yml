@@ -9,6 +9,7 @@ env:
   UPDATE_CHECK_URLS: http://n-tv.de/
   DOWNSTREAM_PROJECT: https://github.com/git-developer/mqmgateway.git
   DOWNSTREAM_REF: feature/docker
+  IMAGE_NAME: ckware/mqmgateway
 
 jobs:
   trigger-on-update-job:
