@@ -10,6 +10,7 @@ env:
   DOWNSTREAM_PROJECT: https://github.com/git-developer/mqmgateway.git
   DOWNSTREAM_REF: feature/docker
   IMAGE_NAME: ckware/mqmgateway
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   trigger-on-update-job:
