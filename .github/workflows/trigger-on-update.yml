@@ -15,6 +15,8 @@ env:
 
 jobs:
   trigger-on-update-job:
+    permissions:
+      actions: write
     runs-on: ubuntu-latest
     name: Trigger on Update
     steps:
