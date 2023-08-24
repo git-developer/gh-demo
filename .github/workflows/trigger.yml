@@ -1,11 +1,15 @@
 name: Trigger
 on:
   workflow_dispatch:
+    inputs:
+      registry:
+        default: dockerhub
 
 jobs:
   job:
     uses: ./.github/workflows/deploy.yml
+    if: inputs.registry == 'dockerhub'
     permissions:
       packages: write
     with:
-      registry: dockerhub
+      registry: ${{ inputs.registry }}
