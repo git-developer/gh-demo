@@ -5,5 +5,7 @@ on:
 jobs:
   job:
     uses: ./.github/workflows/deploy.yml
+    permissions:
+      packages: write
     with:
       registry: dockerhub
