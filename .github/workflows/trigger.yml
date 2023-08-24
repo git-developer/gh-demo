@@ -8,7 +8,7 @@ on:
 jobs:
   job:
     uses: ./.github/workflows/deploy.yml
-    if: inputs.registry == 'dockerhub'
+    if: inputs.registry == 'ghcr'
     permissions:
       packages: write
     with:
