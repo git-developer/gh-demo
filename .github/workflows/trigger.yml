@@ -4,6 +4,7 @@ on:
     inputs:
       registry:
         type: string
+        default: dockerhub
 
 jobs:
   ghcr:
