@@ -1,9 +1,21 @@
 name: Trigger
 on:
   workflow_dispatch:
+    inputs:
+      registry:
+        type: string
 
 jobs:
-  job:
+  ghcr:
+    if: inputs.registry == 'ghcr'
+    permissions:
+      packages: write
     uses: ./.github/workflows/deploy.yml
     with:
-      registry: dockerhub
+      registry: ${{ inputs.registry }}
+
+  dockerhub:
+    if: inputs.registry != 'ghcr'
+    uses: ./.github/workflows/deploy.yml
+    with:
+      registry: ${{ inputs.registry }}
